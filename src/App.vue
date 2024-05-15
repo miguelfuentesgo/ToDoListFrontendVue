@@ -1,17 +1,28 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <TodoCounter/>
+  <TodoSearch />
+  <TodoList>
+    <TodoItem  v-for="todo in todos" :key="todo.text"  :item="todo" />
+  </TodoList>
+
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
+<script setup>
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+import TodoCounter from './components/TodoCounter'
+import TodoSearch from './components/TodoSearch'
+import TodoList from './components/TodoList'
+import TodoItem from './components/TodoItem'
+import { useTodoStore } from './store'
+import { storeToRefs } from 'pinia'
+
+
+ 
+
+  const todoStore =  useTodoStore() 
+
+  const { todos } = storeToRefs(todoStore)
+
 </script>
 
 <style>
