@@ -1,6 +1,6 @@
 <template>
     <div>
-        Ha completado {{completedTodos}} de {{totalTodos}} TODOs
+        <p>Ha completado {{completedTodos}} de {{totalTodos}} TODOs</p>
     </div>
 </template>
 
@@ -17,3 +17,10 @@ import { storeToRefs } from 'pinia';
 
 
 </script>
+
+<style lang="scss" scoped>
+    p {
+       font-size: 1.5rem;
+       color: #101bb3;
+    }
+</style>

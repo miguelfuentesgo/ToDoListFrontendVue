@@ -7,6 +7,8 @@ export const useTodoStore = defineStore('todo',{
             { text: 'Get money', completed: false},
             { text: 'Sleep', completed: false}
         ],
+
+        filter: ''
     }),
     getters: {
         completedTodos: (state) => {
@@ -19,6 +21,31 @@ export const useTodoStore = defineStore('todo',{
     },
 
     actions: {
+        setFilter(newFilter) {
+            console.log('new filter', newFilter)
+            this.filter = newFilter
+        },
+
+        updateTodo(newTodo, index){
+            this.todos[index] = newTodo
+        },
+
+        removeTodo(index) {{
+            console.log('index --->', index)
+            console.log('todos 1', this.todos.values())
+            this.todos = this.todos.filter((_,i) => {
+                console.log("index for ", i)
+                console.log("index ", index)
+                return i != index
+            } )
+
+            console.log('todos 2', this.todos)
+          
+        }},
+
+        updateCompleteTodo(index, completed) {
+            this.todos[index].completed = completed
+        }
 
     }
 })
