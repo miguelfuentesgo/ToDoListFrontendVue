@@ -1,6 +1,6 @@
 <template>
     <div>
-        <input v-model="inputSearch" class="input-miguel" type="text" placeholder="cortar cebolla" @keyup="updateFilter">
+        <input v-model="inputSearch" class="input-miguel" type="text" placeholder="cut onion" @keyup="updateFilter">
     </div>
 </template>
 
@@ -14,6 +14,7 @@
         max-width: 300px;
         border: 1px solid gray;
         border-radius: 5px;
+        margin: 10px auto;
 
         &:hover{
             border: 1px solid rgb(100, 119, 201);

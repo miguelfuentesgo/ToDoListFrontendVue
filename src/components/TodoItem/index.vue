@@ -3,7 +3,7 @@
         <div class="icon-check" @click="check">
             <font-awesome-icon icon="check" />
         </div>
-        <p :class="{'checked': checked }">
+        <p :class="{'checked': props.item.completed }">
             {{ props.item.text }}
         </p>
 
@@ -22,8 +22,8 @@
         justify-content: space-between;
         border: 2px solid rgb(100, 119, 201);
         border-radius: 5px;
-        
-
+        transition: transform 0.2s ease;
+        cursor: pointer;
         p {
             color: black;
 
@@ -46,7 +46,7 @@
 
         &:hover{
             border: 2px solid rgb(20, 38, 117);
-            cursor: pointer;
+            transform: scale(1.01);
         }
     }
 </style>
@@ -55,7 +55,7 @@
 
 
 
-import { defineProps, ref} from 'vue'
+import { defineProps } from 'vue'
 import  { useTodoStore } from '@/store'
 
 const props = defineProps({
@@ -66,11 +66,10 @@ const props = defineProps({
 
 
 const store = useTodoStore()
-const checked = ref(props.item.completed)
+
 
 const check = () => {
-    checked.value = !checked.value
-    store.updateCompleteTodo(props.itemIndex, checked.value)
+    store.updateCompleteTodo(props.itemIndex, !props.item.completed)
 }
 
 const remove = () => {

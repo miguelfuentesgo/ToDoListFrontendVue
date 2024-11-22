@@ -4,8 +4,11 @@
   <TodoList>
     <TodoItem  v-for="(todo,index) in filteredTodos" :key="index"  :item="todo" :itemIndex="index" />
   </TodoList>
-
-
+  <Dialog v-model:dialog="dialog">
+      <template #activator="{ props: activatorProps }">
+        <newToDoButton v-bind="activatorProps" />
+      </template>
+  </Dialog>
 </template>
 
 <script setup>
@@ -14,12 +17,14 @@ import TodoCounter from './components/TodoCounter'
 import TodoSearch from './components/TodoSearch'
 import TodoList from './components/TodoList'
 import TodoItem from './components/TodoItem'
+import newToDoButton from './components/newToDoButton'
+import Dialog from './components/Dialog'
 import { useTodoStore } from './store'
 import { storeToRefs } from 'pinia'
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 
 
- 
+ const dialog = ref(false)
 
   const todoStore =  useTodoStore() 
 
@@ -31,17 +36,4 @@ import { computed } from 'vue'
 
 </script>
 
-<style>
-* {
-  box-sizing: border-box;
-}
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  padding: 60px;
-  box-sizing: border-box;
-}
-</style>
+

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <p>Ha completado {{completedTodos}} de {{totalTodos}} TODOs</p>
+        <p>You have completed {{completedTodos}} of {{totalTodos}} TODOs</p>
     </div>
 </template>
 
