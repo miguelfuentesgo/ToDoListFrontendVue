@@ -45,6 +45,13 @@ export const useTodoStore = defineStore('todo',{
 
         updateCompleteTodo(index, completed) {
             this.todos[index].completed = completed
+        },
+
+        addNewTodo(text) {
+            this.todos.push({
+                text: text,
+                completed: false
+            })
         }
 
     }
