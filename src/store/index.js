@@ -1,5 +1,7 @@
 import { defineStore } from 'pinia';
 
+
+// Best practices: define store with use 
 export const useTodoStore = defineStore('todo',{
     state: () => ({
         todos: [

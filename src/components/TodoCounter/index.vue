@@ -1,13 +1,20 @@
 <template>
-    <div>
+    <div class="todo-counter">
         Ha completado {{completedTodos}} de {{totalTodos}} TODOs
     </div>
 </template>
 
+<style scoped>
+    .todo-counter {
+        margin-top: 40px;
+        font-size: 2rem;
+     }
+</style>
+
 <script setup>
 
-import { useTodoStore } from '@/store';
-import { storeToRefs } from 'pinia';
+    import { useTodoStore } from '@/store';
+    import { storeToRefs } from 'pinia';
 
     const todoStore = useTodoStore();
 
@@ -17,3 +24,4 @@ import { storeToRefs } from 'pinia';
 
 
 </script>
+
