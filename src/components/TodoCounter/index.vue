@@ -1,6 +1,7 @@
 <template>
     <div class="todo-counter">
         Ha completado {{completedTodos}} de {{totalTodos}} TODOs
+        
     </div>
 </template>
 

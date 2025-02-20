@@ -6,7 +6,8 @@
   <TodoSearch />
   <TodoList>
     <TodoItem  v-for="todo in todos" :key="todo.text"  :item="todo" @click="goToDetail" />
-  </TodoList>
+  </TodoList> 
+  <NewTodoButton />
 </template>
 
 <style scoped>
@@ -23,6 +24,7 @@ import TodoItem from '@/components/TodoItem'
 import { useTodoStore } from '@/store'
 import { storeToRefs } from 'pinia'
 import { useRouter } from 'vue-router'
+import NewTodoButton from '@/components/NewTodoButton'
 
 const todoStore =  useTodoStore() 
 

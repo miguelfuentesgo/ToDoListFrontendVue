@@ -25,6 +25,10 @@
     border: 1px solid #fff;
     border-radius: 4px;
     cursor: pointer;
+
+    &:hover{
+        border-color: gray;
+    }
   }
 
   .icon-check{
