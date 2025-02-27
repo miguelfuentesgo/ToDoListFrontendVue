@@ -6,7 +6,7 @@
         
 
         <p>
-            {{ text }}
+            {{ description }}
         </p>
         <div :style="closeIconStyle" @mouseover=" hoverCloseIcon = true" @mouseleave=" hoverCloseIcon = false" >
             <font-awesome-icon icon="xmark" />
@@ -51,7 +51,7 @@ const props = defineProps({
 const hoverCheckIcon = ref(false)
 const hoverCloseIcon = ref(false)
 
-const { text } = toRefs(props.item);
+const { description } = toRefs(props.item);
 
 
 const checkIconStyle  = computed( () => {

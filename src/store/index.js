@@ -5,9 +5,6 @@ import { defineStore } from 'pinia';
 export const useTodoStore = defineStore('todo',{
     state: () => ({
         todos: [
-            { text: 'Find job', completed: false },
-            { text: 'Get money', completed: false},
-            { text: 'Sleep', completed: false}
         ],
     }),
     getters: {
@@ -21,6 +18,8 @@ export const useTodoStore = defineStore('todo',{
     },
 
     actions: {
-
+        setTodos(todos) {
+            this.todos = todos;
+        },
     }
 })

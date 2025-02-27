@@ -4,6 +4,17 @@ import  router  from '@/router'
 import '@/styles/main.scss'
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
+//  Vuetify
+import 'vuetify/styles'
+import { createVuetify } from 'vuetify'
+import * as components from 'vuetify/components'
+import * as directives from 'vuetify/directives'
+
+const vuetify = createVuetify({
+    components,
+    directives,
+  })
+
 // Importar todas las librerías necesarias de Font Awesome
 import { library } from '@fortawesome/fontawesome-svg-core'
 
@@ -13,7 +24,7 @@ import { far } from '@fortawesome/free-regular-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 
 
-// Añadir todos los iconos a la librería globalmente
+// Add each icon globally
 library.add(fas, far, fab)
 
 import App from './App.vue'
@@ -27,6 +38,9 @@ app.use(pinia)
 
 //For route management
 app.use(router)
+
+//For UI Components
+app.use(vuetify)
 
 // For icons
 app.component("font-awesome-icon", FontAwesomeIcon);
